@@ -6,5 +6,6 @@ object Employee {
     const val WAGE_PER_HOUR = 20
     const val FULL_TIME_HOUR = 8
     const val PART_TIME_HOUR = 4
-    const val DAYS_IN_MONTH = 20
+    const val DAYS_IN_MONTH = 25
+    const val HRS_IN_MONTH = 100
 }
