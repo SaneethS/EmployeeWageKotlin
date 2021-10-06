@@ -1,11 +1,13 @@
 package com.employeewage
 
-fun checkAttendance(){
+fun checkAttendance():Int {
     val empCheck = (0..1).random()
 
-    if(empCheck == Employee.IS_PRESENT){
+    return if(empCheck == Employee.IS_PRESENT){
         println("Employee is present")
+        Employee.IS_PRESENT
     }else{
         println("Employee is absent")
+        0
     }
 }
