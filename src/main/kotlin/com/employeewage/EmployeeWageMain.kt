@@ -2,5 +2,6 @@ package com.employeewage
 
 fun main(){
     println("Welcome to employee wage")
-    wageDaysHour()
+    val wageDaysHours = WageDaysHours()
+    wageDaysHours.wageDaysHour()
 }
