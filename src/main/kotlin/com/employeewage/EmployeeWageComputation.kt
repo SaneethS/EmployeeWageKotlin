@@ -1,13 +1,13 @@
 package com.employeewage
 
-class EmployeeWageComputation {
+class EmployeeWageComputation: EmpWageBuilder {
     var companyList = mutableListOf<CompEmpWage>()
 
-    fun addCompany(companyName: String, empHrs: Int, wagePerHour: Int, hoursInMonth: Int, daysInMonth: Int){
+    override fun addCompany(companyName: String, empHrs: Int, wagePerHour: Int, hoursInMonth: Int, daysInMonth: Int){
         companyList.add(CompEmpWage(companyName,empHrs,wagePerHour,daysInMonth,hoursInMonth))
     }
 
-    fun computeWage(compEmpWage: CompEmpWage):Int {
+    private fun computeWage(compEmpWage: CompEmpWage):Int {
         var totalHrs = 0
         var totalDays = 0
         var totalWage = 0
@@ -26,7 +26,7 @@ class EmployeeWageComputation {
         return totalWage
     }
 
-    fun compute(){
+    override fun compute(){
         for(company in companyList){
            company.setCompanyWage(this.computeWage(company))
            println(company)
