@@ -1,16 +1,16 @@
 package com.employeewage
 
 class WageDaysHours {
-    fun wageDaysHour(){
+    fun wageDaysHour(companyName: String, empHrs: Int, wagePerHour: Int, hoursInMonth: Int, daysInMonth: Int){
         var totalHrs = 0
         var totalDays = 0
         var totalWage = 0
         val attendance = CheckAttendance()
-        val checkAttendance = attendance.checkAttendance()
+        val checkAttendance = attendance.checkAttendance(companyName)
         val dailyWage = DailyWage()
 
-        while(totalHrs < Constants.HRS_IN_MONTH && totalDays < Constants.DAYS_IN_MONTH){
-            val(wage, hours) = dailyWage.dailyWage(checkAttendance)
+        while(totalHrs < hoursInMonth && totalDays < daysInMonth){
+            val(wage, hours) = dailyWage.dailyWage(checkAttendance, empHrs, wagePerHour)
             totalWage += wage
             totalHrs += hours
             totalDays += 1
