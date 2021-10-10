@@ -6,4 +6,8 @@ fun main(){
     employeeWageComputation.addCompany("Jio", 8,20,100,25)
     employeeWageComputation.addCompany("Tata",10,15,110,25)
     employeeWageComputation.compute()
+
+    println()
+    val jioWage = employeeWageComputation.getCompany("Jio")
+    println("Wage of jio is : $jioWage")
 }

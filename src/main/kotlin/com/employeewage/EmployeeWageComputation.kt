@@ -2,9 +2,12 @@ package com.employeewage
 
 class EmployeeWageComputation: EmpWageBuilder {
     private var companyList:ArrayList<CompEmpWage> = arrayListOf<CompEmpWage>()
+    private var map:HashMap<String,CompEmpWage> = hashMapOf<String,CompEmpWage>()
 
     override fun addCompany(companyName: String, empHrs: Int, wagePerHour: Int, hoursInMonth: Int, daysInMonth: Int){
-        companyList.add(CompEmpWage(companyName,empHrs,wagePerHour,daysInMonth,hoursInMonth))
+        var company = CompEmpWage(companyName,empHrs,wagePerHour,daysInMonth,hoursInMonth)
+        companyList.add(company)
+        map[companyName] = company
     }
 
     private fun computeWage(compEmpWage: CompEmpWage):Int {
@@ -33,5 +36,9 @@ class EmployeeWageComputation: EmpWageBuilder {
            company.setCompanyWage(this.computeWage(company))
            println(company)
         }
+    }
+
+    override fun getCompany(companyName: String): Int {
+        return map[companyName]?.totalEmpWage?: -1
     }
 }
