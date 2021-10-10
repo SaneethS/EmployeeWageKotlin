@@ -15,14 +15,16 @@ class EmployeeWageComputation: EmpWageBuilder {
         val checkAttendance = attendance.checkAttendance(compEmpWage.companyName)
         val dailyWage = DailyWage()
 
-        while(totalHrs < compEmpWage.hoursInMonth && totalDays < compEmpWage.daysInMonth){
-            val(wage, hours) = dailyWage.dailyWage(checkAttendance, compEmpWage.empHrs, compEmpWage.wagePerHour)
+
+        while(totalHrs < compEmpWage.hoursInMonth && totalDays < compEmpWage.daysInMonth) {
+            val (wage, hours) = dailyWage.dailyWage(checkAttendance, compEmpWage.empHrs, compEmpWage.wagePerHour)
             totalWage += wage
             totalHrs += hours
             totalDays += 1
 
-//            println("Day-$totalDays hours-$totalHrs : $totalWage")
+            println("Day-$totalDays wage : $wage")
         }
+
         return totalWage
     }
 
