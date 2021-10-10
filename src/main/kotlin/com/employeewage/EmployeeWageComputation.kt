@@ -1,7 +1,7 @@
 package com.employeewage
 
 class EmployeeWageComputation: EmpWageBuilder {
-    var companyList = mutableListOf<CompEmpWage>()
+    private var companyList:ArrayList<CompEmpWage> = arrayListOf<CompEmpWage>()
 
     override fun addCompany(companyName: String, empHrs: Int, wagePerHour: Int, hoursInMonth: Int, daysInMonth: Int){
         companyList.add(CompEmpWage(companyName,empHrs,wagePerHour,daysInMonth,hoursInMonth))
