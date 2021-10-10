@@ -17,6 +17,6 @@ class WageDaysHours {
 
             println("Day-$totalDays hours-$totalHrs : $totalWage")
         }
-        println("Total wage of employee is : $totalWage")
+        println("Total wage of $companyName is : $totalWage")
     }
 }
