@@ -20,7 +20,7 @@ class EmployeeWageComputation: EmpWageBuilder {
 
 
         while(totalHrs < compEmpWage.hoursInMonth && totalDays < compEmpWage.daysInMonth) {
-            val (wage, hours) = dailyWage.dailyWage(checkAttendance, compEmpWage.empHrs, compEmpWage.wagePerHour)
+            val (wage, hours) = dailyWage.dailyWage(attendance.checkAttendance(compEmpWage.companyName), compEmpWage.empHrs, compEmpWage.wagePerHour)
             totalWage += wage
             totalHrs += hours
             totalDays += 1
